@@ -1,0 +1,32 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    <body>
+        <h1>Contact Us</h1>
+		<h3>Please fill out the form below and you will be contact by our coach or captain soon with a repsonse!</h3>
+
+        <div class="form">
+            <form action="" method="post" name="contact">
+                {{ form.hidden_tag() }}
+                <p>Subject<br>{{ form.subject(class='form-control') }}<br></p>
+                    {% for error in form.subject.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Message<br>{{ form.description(class='form-control') }}<br></p>
+                    {% for error in form.description.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                
+                <p><input type="submit" value="Send"></p>
+            </form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "navbar_nonMember.html" %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul>
+				{% for message in messages %}
+					<li>{{ message }} </li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+	<body onload="slideShow(1)">
+		<div class="jumbotron jumbotron-fluid">
+			<h1>LUUWAFC 4th Team</h1>
+		</div>
+
+		<!-- Main image gallery slideshow on the home page-->
+		<div class="gallery">
+			<img class="slides" src="/static/images/home/img1.jpg" alt="4sImg1">
+			<img class="slides" src="/static/images/home/action1.jpg" alt="4sImg2">
+			<img class="slides" src="/static/images/home/img2.jpg" alt="4sImg3">
+			<img class="slides" src="/static/images/home/action2.jpg" alt="4sImg4">
+			<img class="slides" src="/static/images/home/img3.jpg" alt="4sImg5">
+			<img class="slides" src="/static/images/home/action3.jpg" alt="4sImg6">
+			<img class="slides" src="/static/images/home/coach1.jpg" alt="4sImg7">
+			<img class="slides" src="/static/images/home/action4.jpg" alt="4sImg8">
+	  		  
+			<!-- controls the moving from 1 image to another through arrow clicking-->
+			<a class="previous" onclick="next_slide(-1)">&#10094;</a>
+			<a class="next" onclick="next_slide(1)">&#10095;</a>
+		  </div>
+		  <br>
+
+		  <!-- controls the moving from 1 image to another (but can  allow for big jumps across multiple images)-->
+		  <div class="dots">
+			<span class="dot" onclick="dot_slide(1)"></span>
+			<span class="dot" onclick="dot_slide(2)"></span>
+			<span class="dot" onclick="dot_slide(3)"></span>
+			<span class="dot" onclick="dot_slide(4)"></span>
+			<span class="dot" onclick="dot_slide(5)"></span>
+			<span class="dot" onclick="dot_slide(6)"></span>
+			<span class="dot" onclick="dot_slide(7)"></span>
+			<span class="dot" onclick="dot_slide(8)"></span>
+		  </div>
+	  
+
+
+	</body>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Fixtures Played/To Play</h1>
+
+        <table class="table">
+            <thead>
+                <th>Team</th>
+                <th>H/A</th>
+                <th>Date</th>
+                <th></th>
+            <tbody>
+                {% for f in fixtures %}
+                <tr>
+                    <td>{{f.team}}</td>
+                    <td>{{f.home_away}}</td>
+                    <td>{{f.date}}</td>
+                    <td><a href="/fixture_info_lineup/{{f.fixtureId}}"><button type="button" class="btns">View Fixture Info and Lineup</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+{% endblock %}

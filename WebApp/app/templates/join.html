@@ -1,0 +1,45 @@
+{% extends "navbar_nonMember.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Join the 4s!</h1>
+		<h3>Please fill out the form below to join our team</h3>
+
+        <div class="form">
+            <form action="" method="post" name="join">
+                {{ form.hidden_tag() }}
+                <p>Firstname<br>{{ form.fname(class='form-control') }}<br></p>
+                    {% for error in form.fname.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Last Name<br>{{ form.lname(class='form-control') }}<br></p>
+                    {% for error in form.lname.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+				<!-- Change this so it checks its a uni of leeds email -->
+                <p>Email<br>{{ form.email(class='form-control') }}<br></p>
+                    {% for error in form.email.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Password<br>{{ form.password_hash(class='form-control') }}<br></p>
+                    {% for error in form.password_hash.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Position<br>{{ form.position(class='form-control') }}<br></p>
+                    {% for error in form.position.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p><input type="submit" value="Join"></p>
+            </form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "navbar_nonMember.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Login</h1>
+
+        <div class="form">
+            <form action="" method="post" name="login">
+                {{ form.hidden_tag() }}
+                <p>Email<br>{{ form.email(class='form-control') }}<br></p>
+                    {% for error in form.email.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Password<br>{{ form.password_hash(class='form-control') }}<br></p>
+                    {% for error in form.password_hash.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+				<p><a href="/forgot_password"><button type="button">Forgotten Password?</button></p>
+
+				
+                <p><input type="submit" value="Login"></p>
+            </form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Fixture Information</h1>
+
+        <div>
+            <table>
+                <thead>
+                    <th>Game Location</th>
+                    <th>Meet Location</th>
+                    <th>KO Time</th>
+                    <th>Meet Time</th>
+                </thead>
+                <tbody>
+                    {% for i in info %}
+                    <tr>
+                        <td>{{i.location}}</td>
+                        <td>{{i.meet_loc}}</td>
+                        <td>{{i.time}}</td>
+                        <td>{{i.meet_time}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+        </div>
+
+        <div>
+            {% for l in lineup %}
+            <tr>
+                <td>{{l.fname}}</td>
+                <td>{{l.lname}}</td>
+                <td>{{l.position}}</td>
+            </tr>
+            {% endfor %}
+        </div>
+
+
+    </body>
+{% endblock %}

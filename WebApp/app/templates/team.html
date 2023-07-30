@@ -1,0 +1,31 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Team Members</h1>
+
+        {% for m in members %}
+		<div class="card w-50">
+			<div class="card-header">
+				<h4>{{ m.fname }}{{ m.lname }}</h4>
+			</div>
+			<div class="card-body">
+				<p>Position: {{ m.position }}</p>
+                <p>
+                    <a href="/fixtures_played/{{m.memberId}}"><button type="button" class="btns">View Fixtures Played/To Play</button></a>
+                    <a href="/delete_player/{{m.memberId}}"><button type="button" class="btn">Delete Player</button></a>
+                </p>
+            </div>
+		</div>
+		{% endfor %}
+    </body>
+{% endblock %}

@@ -1,0 +1,188 @@
+.navbar{
+	background-color:  #9bccf0 ;
+	font-family: 'Courier New', Courier, monospace;
+
+}
+
+.nav-link:active{
+	color: red;
+}
+
+.fas{
+	font-size: 23px;
+}
+
+.jumbotron{
+	font-family: 'Courier New', Courier, monospace;
+	margin: 10px 5px 10px;
+	text-align: center;
+	background-image: linear-gradient(
+        to right,
+        rgb(21, 68, 50) 0%,
+		rgb(33, 79, 61) 10%,
+		rgb(45, 89, 72) 20%,
+		rgb(57, 100, 83) 30%,
+		rgb(69, 111, 95) 40%,
+		rgb(81, 122, 107) 50%,
+		rgb(93, 134, 119) 60%,
+		rgb(106, 145, 131) 70%,
+		rgb(118, 157, 143) 80%,
+		rgb(131, 169, 156) 90%
+		
+    );}
+
+.card{
+	font-family: 'Courier New', Courier, monospace;
+	margin: 15px auto 15px;
+	text-align: center;
+	box-shadow: 2px 2px 4px gray;
+
+}
+
+.card-header{
+	background-color: #9bccf0 ;
+}
+
+
+.btn{
+	background-color: lightcoral;
+	padding: 10px 15px;
+	text-align: center;
+	color: darkslategray;
+
+}
+
+.btns{
+	background-color: lightgray;
+	padding: 10px 15px;
+	text-align: center;
+	color: darkslategray;
+
+}
+
+.btn:hover{
+	background-color: red;
+	color: black;
+}
+
+.btns:hover{
+	background-color: gray;
+	color: black;
+}
+
+
+
+input[type=submit] {
+	width: 100%;
+	background-color: #9bccf0;
+	color: black;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}  
+
+input[type=submit]:hover {
+	background-color: lightgreen;
+	color: black;
+}
+  
+.form {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Courier New', Courier, monospace;
+	border-radius: 5px;
+	background-color:  lightgray ;
+	padding: 20px;
+	box-shadow: 2px 2px 4px gray;
+}
+
+h1, h2, h3, h4, h5{
+	text-align: center;
+}
+
+
+/* home page css */
+
+/* slideshow gallery */
+.gallery {
+	max-width: 50%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+  
+}
+
+.slides {
+	display: none;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: contain;
+}
+
+.next, .previous {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+}
+
+.next{
+	right: 0px;
+	border-radius: 3px 0 0 3px;
+}
+
+.previous:hover, .next:hover{
+	background-color: black;
+}
+
+.dots {
+	text-align: center;
+}
+
+.dot {
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+table {
+	font-family: 'Courier New', Courier, monospace;
+	max-width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #9bccf0;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}

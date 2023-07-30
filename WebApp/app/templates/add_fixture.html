@@ -1,0 +1,55 @@
+{% extends "navbar.html" %}
+    {% block content %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+    <body>
+        <h1>Add Fixture</h1>
+
+        <div class="form">
+            <form action="" method="post" name="add">
+                {{ form.hidden_tag() }}
+                <p>Team<br>{{ form.team(class='form-control')}}<br></p>
+                    {% for error in form.team.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Date<br>{{ form.date(class='form-control') }}<br></p>
+                    {% for error in form.date.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Home or Away<br>{{ form.home_away(class='form-control') }}<br></p>
+                    {% for error in form.home_away.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Location (Submit N/A if game is away)<br>{{ form.location(class='form-control') }}<br></p>
+                    {% for error in form.location.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Meet Location<br>{{ form.meet_loc(class='form-control') }}<br></p>
+                    {% for error in form.meet_loc.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>KO Time (2pm)<br>{{ form.time(class='form-control') }}<br></p>
+                    {% for error in form.time.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Meet Time<br>{{ form.meet_time(class='form-control') }}<br></p>
+                    {% for error in form.meet_time.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p>Lineup<br>{{ form.members(class='form-control') }}</br></p>
+                    {% for error in form.meet_time.errors %}
+                        [{{ error }}]
+                    {% endfor %}
+                <p><input type="submit" value="Create"></p>
+            </form>
+        </div>
+    </body>
+{% endblock %}
